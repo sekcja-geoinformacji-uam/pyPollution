@@ -1,5 +1,5 @@
 import pandas as pd
-from pyPollution.main import PollutionData
+from pyPollution.pollutionplotter import PollutionData
 
 zp2010 = pd.read_csv("data/zachpom_2010_pm10.csv", sep=";")
 zp2020 = pd.read_csv("data/zachpom_2020_pm10.csv", sep=";")
