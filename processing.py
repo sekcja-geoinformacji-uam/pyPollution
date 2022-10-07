@@ -1,5 +1,6 @@
 import pandas as pd
-from pyPollution.pollutionplotter import PollutionData
+import matplotlib.pyplot as plt
+from py_pollution.pollutionplotter import PollutionPlotter
 
 zp2010 = pd.read_csv("data/zachpom_2010_pm10.csv", sep=";")
 zp2020 = pd.read_csv("data/zachpom_2020_pm10.csv", sep=";")
@@ -22,17 +23,20 @@ zp2020MeanMonth.sort_index(inplace=True)
 
 # print(zp2020MeanMonth)
 
-plot2010 = PollutionData()
-plot2010.plot(x=zp2010MeanMonth.Month,
-              y=zp2010MeanMonth.Koszalin, label="Koszalin")
-plot2010.plot(zp2010MeanMonth.Month,
-              zp2010MeanMonth.Szczecinek, label="Szczecinek")
-plot2010.plot(zp2010MeanMonth.Month,
-              zp2010MeanMonth.Szczecin, label="Szczecin")
-plot2010.ylabel = 'Mean monthly PM10'
-plot2010.format('')
-plot2010.print()
+# plot2010 = PollutionData()
+# plot2010.plot(x=zp2010MeanMonth.Month,
+#               y=zp2010MeanMonth.Koszalin, label="Koszalin")
+# plot2010.plot(zp2010MeanMonth.Month,
+#               zp2010MeanMonth.Szczecinek, label="Szczecinek")
+# plot2010.plot(zp2010MeanMonth.Month,
+#               zp2010MeanMonth.Szczecin, label="Szczecin")
+# plot2010.ylabel = 'Mean monthly PM10'
+# plot2010.format('')
+# plot2010.print()
 
+plt.hist(zp2010MeanMonth['Szczecin'])
+plt.show()
+print('test')
 # plot2020 = PollutionData()
 # plot2020.plot(x=zp2020MeanMonth.Month,
 #               y=zp2020MeanMonth.Koszalin, label="Koszalin")
