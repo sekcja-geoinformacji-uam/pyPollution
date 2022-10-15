@@ -4,7 +4,7 @@ from IPython.display import display
 
 class PollutionPlotter():
     '''
-    Automate 
+    Automate generating plots for data.
     '''
 
     def set_style(self, style: str) -> None:
@@ -19,7 +19,7 @@ class PollutionPlotter():
         '''
         plt.plot(*args, **kwargs)
 
-    def bar(self, x, y, width, ticks, xlabel, label=''):
+    def bar(self, x, y, width: float, ticks, xlabel: str, label: str = ''):
         '''
         Make a bar plot
         '''
@@ -34,7 +34,7 @@ class PollutionPlotter():
 
     def format(self, config: dict) -> None:
         '''
-        Sets the multiple for plot based on config dictionary
+        Formats plot based on input config dictionary
         '''
         if config["legend"]:
             plt.legend(loc=config["legend"])
@@ -51,7 +51,7 @@ class PollutionPlotter():
 
     def show(self) -> None:
         '''
-        Show the plot
+        Show the plot.
         '''
         plt.show()
 
